@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2-dic-2019 16.01.51 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="it.gr.fireball.beans.Request" table="requests">
+        <id name="id_request" type="java.lang.Long">
+            <column name="id_request" />
+            <generator class="identity" />
+        </id>
+        <property name="id_article" type="java.lang.Long">
+            <column name="id_article" />
+        </property>
+        <property name="article_name" type="java.lang.String">
+            <column name="article_name" />
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note" />
+        </property>
+        <property name="form_name" type="java.lang.String">
+            <column name="form_name" />
+        </property>
+        <property name="question_1" type="java.lang.String">
+            <column name="question_1" />
+        </property>
+        <property name="answer_1" type="java.lang.String">
+            <column name="answer_1" />
+        </property>
+        <property name="question_2" type="java.lang.String">
+            <column name="question_2" />
+        </property>
+        <property name="answer_2" type="java.lang.String">
+            <column name="answer_2" />
+        </property>
+        <property name="question_3" type="java.lang.String">
+            <column name="question_3" />
+        </property>
+        <property name="answer_3" type="java.lang.String">
+            <column name="answer_3" />
+        </property>
+        <property name="question_4" type="java.lang.String">
+            <column name="question_4" />
+        </property>
+        <property name="answer_4" type="java.lang.String">
+            <column name="answer_4" />
+        </property>
+        <property name="question_5" type="java.lang.String">
+            <column name="question_5" />
+        </property>
+        <property name="answer_5" type="java.lang.String">
+            <column name="answer_5" />
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date" />
+        </property>
+        <property name="supplier_emails" type="java.lang.String">
+            <column name="supplier_emails" />
+        </property>
+        <property name="supplier_service" type="java.lang.String">
+            <column name="supplier_service" />
+        </property>
+        <property name="new_request" type="java.lang.String">
+            <column name="new_request" />
+        </property>
+        <many-to-one name="lead" class="it.gr.fireball.beans.Lead" fetch="join" lazy="false">
+            <column name="id_lead" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

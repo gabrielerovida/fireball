@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2-dic-2019 15.24.53 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="it.gr.fireball.beans.Lead" table="leads">
+        <id name="id_lead" type="java.lang.Long">
+            <column name="id_lead" />
+            <generator class="identity" />
+        </id>
+        <property name="first_name" type="java.lang.String">
+            <column name="first_name" />
+        </property>
+        <property name="last_name" type="java.lang.String">
+            <column name="last_name" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="phone_2" type="java.lang.String">
+            <column name="phone_2" />
+        </property>
+        <property name="business_name" type="java.lang.String">
+            <column name="business_name" />
+        </property>
+        <property name="vat_number" type="java.lang.String">
+            <column name="vat_number" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="gender" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="country" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="city" />
+        </property>
+        <property name="zip_code" type="java.lang.String">
+            <column name="zip_code" />
+        </property>
+        <property name="disclaimer_1" type="java.lang.String">
+            <column name="disclaimer_1" />
+        </property>
+        <property name="disclaimer_2" type="java.lang.String">
+            <column name="disclaimer_2" />
+        </property>
+        <property name="disclaimer_3" type="java.lang.String">
+            <column name="disclaimer_3" />
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date" />
+        </property>
+        <property name="id_admin" type="java.lang.Long">
+            <column name="id_admin" />
+        </property>
+    </class>
+</hibernate-mapping>

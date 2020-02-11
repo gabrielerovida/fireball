@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.enable.SlashesInActionNames"
+		value="true" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+<!-- 	<constant name="struts.action.excludePattern" -->
+<!-- 		value="" /> -->
+	<constant name="struts.multipart.maxSize" value="10000000" />
+	<constant name="struts.multipart.parser" value="jakarta-stream" />
+
+	<package name="actions" namespace="/" extends="struts-default">
+
+		<action name="index" class="it.gr.fireball.actions.Welcome">
+			<result name="success">/index.jsp</result>
+			<result name="success_nologin">/index_nologin.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="login" class="it.gr.fireball.actions.Login">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="auth_error" type="redirectAction">
+				<param name="actionName">index?auth=error</param>
+			</result>
+			<result name="input">/index_nologin.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="logout" class="it.gr.fireball.actions.Logout">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+		</action>
+
+<!-- 		<action name="media-library" -->
+<!-- 			class="it.gr.moonwalker.actions.MediaLibrary"> -->
+<!-- 			<result name="success">/media_library.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="media-library/add" -->
+<!-- 			class="it.gr.moonwalker.actions.MediaLibraryAdd"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">media-library</param> -->
+<!-- 				<param name="c">${category}</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/media_library.jsp</result> -->
+<!-- 		</action> -->
+
+
+		<action name="leads"
+			class="it.gr.fireball.actions.Leads">
+			<result name="success">/leads.jsp</result>
+			<result name="success_nologin" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+<!-- 		<action name="customers/new" -->
+<!-- 			class="it.gr.moonwalker.actions.NewCustomer"> -->
+<!-- 			<result name="success">/form_customer.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="customers/manage/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ManageCustomer"> -->
+<!-- 			<param name="id_customer">{1}</param> -->
+<!-- 			<result name="success">/form_customer.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="customers/save" -->
+<!-- 			class="it.gr.moonwalker.actions.SaveCustomer"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">customers</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/form_customer.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="customers/list" -->
+<!-- 			class="it.gr.moonwalker.actions.inc.ListCustomers"> -->
+<!-- 			<result name="success">/inc/list_customers.jsp</result> -->
+<!-- 			<result name="success_nologin"></result> -->
+<!-- 			<result name="error"></result> -->
+<!-- 		</action> -->
+
+
+
+
+
+
+<!-- 		<action name="products" -->
+<!-- 			class="it.gr.moonwalker.actions.Products"> -->
+<!-- 			<result name="success">/products.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="products/new" -->
+<!-- 			class="it.gr.moonwalker.actions.NewProduct"> -->
+<!-- 			<result name="success">/form_product.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="products/manage/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ManageProduct"> -->
+<!-- 			<param name="id_product">{1}</param> -->
+<!-- 			<result name="success">/form_product.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="products/save" -->
+<!-- 			class="it.gr.moonwalker.actions.SaveProduct"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">products</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/form_product.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="products/list" -->
+<!-- 			class="it.gr.moonwalker.actions.inc.ListProducts"> -->
+<!-- 			<result name="success">/inc/list_products.jsp</result> -->
+<!-- 			<result name="success_nologin"></result> -->
+<!-- 			<result name="error"></result> -->
+<!-- 		</action> -->
+
+
+<!-- 		<action name="contracts" -->
+<!-- 			class="it.gr.moonwalker.actions.Contracts"> -->
+<!-- 			<result name="success">/contracts.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="contracts/new" -->
+<!-- 			class="it.gr.moonwalker.actions.NewContract"> -->
+<!-- 			<result name="success">/form_contract.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="contracts/manage/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ManageContract"> -->
+<!-- 			<param name="id_contract">{1}</param> -->
+<!-- 			<result name="success">/form_contract.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="contracts/save" -->
+<!-- 			class="it.gr.moonwalker.actions.SaveContract"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">contracts</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/form_contract.jsp</result> -->
+<!-- 		</action> -->
+
+
+
+
+
+<!-- 		<action name="sales" class="it.gr.moonwalker.actions.Sales"> -->
+<!-- 			<result name="success">/sales.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="sales/new" -->
+<!-- 			class="it.gr.moonwalker.actions.NewSale"> -->
+<!-- 			<result name="success">/form_sale.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="sales/manage/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ManageSale"> -->
+<!-- 			<param name="id_sale">{1}</param> -->
+<!-- 			<result name="success">/form_sale.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="sales/save" -->
+<!-- 			class="it.gr.moonwalker.actions.SaveSale"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">sales</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/form_sale.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="sales/invoice/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ShowInvoice"> -->
+<!-- 			<param name="id_invoice">{1}</param> -->
+<!-- 			<result name="success">/show_invoice.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="sales/from-quote/*" -->
+<!-- 			class="it.gr.moonwalker.actions.NewSaleFromQuote"> -->
+<!-- 			<param name="id_quote">{1}</param> -->
+<!-- 			<result name="success">/form_sale.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+
+
+
+
+<!-- 		<action name="quotes" class="it.gr.moonwalker.actions.Quotes"> -->
+<!-- 			<result name="success">/quotes.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="quotes/new" -->
+<!-- 			class="it.gr.moonwalker.actions.NewQuote"> -->
+<!-- 			<result name="success">/form_quote.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="quotes/manage/*" -->
+<!-- 			class="it.gr.moonwalker.actions.ManageQuote"> -->
+<!-- 			<param name="id_quote">{1}</param> -->
+<!-- 			<result name="success">/form_quote.jsp</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 		</action> -->
+
+<!-- 		<action name="quotes/save" -->
+<!-- 			class="it.gr.moonwalker.actions.SaveQuote"> -->
+<!-- 			<result name="success" type="redirectAction"> -->
+<!-- 				<param name="actionName">quotes</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="success_nologin" type="redirectAction"> -->
+<!-- 				<param name="actionName">index</param> -->
+<!-- 			</result> -->
+<!-- 			<result name="error">/error.jsp</result> -->
+<!-- 			<result name="input">/form_quote.jsp</result> -->
+<!-- 		</action> -->
+
+
+
+	</package>
+
+</struts>

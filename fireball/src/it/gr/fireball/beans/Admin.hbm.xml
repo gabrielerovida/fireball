@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-lug-2019 10.19.27 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="it.gr.fireball.beans.Admin" table="admins">
+        <id name="id_admin" type="java.lang.Long">
+            <column name="id_admin" />
+            <generator class="identity" />
+        </id>
+        <property name="first_name" type="java.lang.String">
+            <column name="first_name" />
+        </property>
+        <property name="last_name" type="java.lang.String">
+            <column name="last_name" />
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="username" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date" />
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="last_activity_date" type="java.util.Date">
+            <column name="last_activity_date" />
+        </property>
+        <property name="level" type="java.lang.String">
+            <column name="level" />
+        </property>
+    </class>
+</hibernate-mapping>
